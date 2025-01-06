@@ -1,0 +1,257 @@
+<html>
+    <head>
+        <style>
+            body
+            {
+                background-color: beige;
+            }
+        </style>
+        <script>
+              function add()
+            {
+             const a=Number( document.getElementById("a").value);
+             const b=Number(document.getElementById("b").value);
+             const c=a+b;
+             alert("result is :"+c);
+            }
+            function check()
+            {
+                const a=Number(document.getElementById("val").value);
+               if(isNaN(a))
+               {
+                document.getElementById("p").innerHTML= "Enter valid number";
+               }
+                else if(a>0)
+            {
+                document.getElementById("p").innerHTML="It is an positive number";
+              
+            }
+            else if(a==0)
+            {
+                document.getElementById("p").innerHTML="It is an Zero";
+            }
+            else if(a<0)
+            {
+                document.getElementById("p").innerHTML="It is a negative number";
+            }
+            }
+            function evenorOdd()
+            {
+            const n=Number(document.getElementById("val").value);
+            if(isNaN(n))
+            {
+                document.getElementById("p").innerHTML="Enter valid number";
+            }
+            else if(n%2==0)
+            {
+                document.getElementById("p").innerHTML="Given number is even";
+            }
+            else{
+                document.getElementById("p").innerHTML="Given number is odd";
+            }
+            }
+            function Biggestof3()
+            {
+                const a=Number(document.getElementById("val1").value);
+                const b=Number(document.getElementById("val2").value);
+                const c=Number(document.getElementById("val3").value);
+                if(isNaN(a||b||c))
+            {
+                document.getElementById("p1").innerHTML="Enter valid number";
+            }
+            else if(a>b&&a>c)
+            {
+                document.getElementById("p1").innerHTML="This is the biggest value among three :"+a;
+            }
+            else if(b>a&&b>c)
+            {
+                document.getElementById("p1").innerHTML="This is the biggest value among three :"+b;
+            }
+            else
+            {
+                document.getElementById("p1").innerHTML="This is the biggest value among three :"+c;
+            }
+            }
+
+            function primeornot()
+            {
+                const n=Number(document.getElementById("val4").value);
+                let j=0;
+                for(let i=1;i<=n;i++)
+                {
+                  if(n%i==0)
+                  {
+                    j++;
+                  }
+                }
+                if(j==2)
+                {
+                    document.getElementById("p2").innerHTML=n+" is a prime number";
+                }
+                else
+                {
+                    document.getElementById("p2").innerHTML=n+" is not a prime number";
+                }  
+            }
+
+        function primenumbers()
+        {
+            let n=Number(document.getElementById("val5").value);
+            let k=Number(document.getElementById("val6").value);
+            let result = "";
+            for(let i=n;i<=k;i++)
+            {
+             let count=0;
+             for(let j=1;j<=i;j++)
+             {
+                if(i%j==0)
+             {
+                count++;
+             }
+             }
+             if(count==2)
+             {
+                result = result+i+" is a prime number <br>"
+             }
+            }
+            document.getElementById("p3").innerHTML=result;
+        }    
+
+        function fact()
+        {
+            let n=Number(document.getElementById("val7").value);
+            let fact=1;
+            for(let i=1;i<=n;i++)
+            {
+            fact=fact*i;
+            }
+            document.getElementById("p4").innerHTML="Factorial of "+n+ " is :"+fact;
+        }
+
+        function table()
+        {
+            let n=Number(document.getElementById("val8").value);
+            let j;
+            let result="";
+            for(let i=1;i<=20;i++)
+            {
+             j=n*i;
+             result=result+" 2 * "+i+"= "+j+" <br>"
+            }
+            document.getElementById("p5").innerHTML=result;
+        }
+
+        function naturalnum()
+        {
+            let n=Number(document.getElementById("val9").value);
+            let sum=0;
+            for(let i=1;i<=n;i++)
+            {
+            sum=sum+i;
+            }
+            document.getElementById("p6").innerHTML=" Sum of natural numbers is :"+sum;
+        }
+
+        function StringPal()
+        {
+            let s=String(document.getElementById("val10").value);
+            let rev="";
+            for(let i=0;i<s.length;i++)
+            {
+            rev=s.charAt(i)+rev;
+            }
+            if(s==rev)
+            {
+            document.getElementById("p7").innerHTML=s+" is a pallindrome";
+            } 
+            else
+            {
+            document.getElementById("p7").innerHTML=s+" is not a pallindrome";
+            }
+        }
+
+        function ArmStrongOrNot() 
+        {
+        let n=Number(document.getElementById("val11").value);
+        let num=n;
+        let sum=0;
+        const digits=n.toString().length; 
+        while(num>0)
+         {
+        let digit=num%10;
+        sum=sum+Math.pow(digit,digits); 
+        num=Math.floor(num/10); 
+         }
+         if(sum==n)
+        {
+         document.getElementById("p8").innerHTML=n+"  is an Armstrong number.";
+        }
+        else 
+        {
+            document.getElementById("p8").innerHTML=n+" is not an Armstrong number.";
+        }
+        }
+
+
+        </script>
+        <h1 style="margin-left: 350;">Todays_JavaScript_Tasks</h1>
+    </head>
+    <body>
+        <label for="program" style="margin-bottom: 10px; font-weight: bold;font-family: Verdana, Geneva, Tahoma, sans-serif;margin-bottom: 10px;">2:-Adding two numbers:</label><br>
+        <label for="a">A value</label>
+        <input type="number" id="a" placeholder="enter number"  required>
+        <label for="B" style="margin-left: 15px;">B value:</label>
+        <input type="number" id="b" placeholder="enter number" required><br>
+        <input type="button" value="Toadd" onclick="add()" style="margin-top: 10px;margin-left: 5px; margin-bottom: 10px; cursor: pointer;"><br>
+        <label for="program" style="font-weight: bold;font-family: Verdana, Geneva, Tahoma, sans-serif;margin-bottom: 10px;">(3&&4):-positive_or_not_or_ZERO & TocheckNumber_Even/odd :</label><br>
+        <label for="positive_or_not_or_ZERO:">Enter value:</label>
+        <input type="text" id="val" style="margin-top: 10px;" placeholder="Enter number" >
+        <p id="p" style="margin-left: 15px;"><u>Result Presenting here</u></p>
+        <input type="button" value="tocheck" onclick="check()" style="padding: 1px 15px;cursor: pointer;">
+        <input type="button" value="TocheckNumber_Even/odd" onclick="evenorOdd()" style="margin-left: 10px; cursor: pointer;"><br>
+        <p style="font-weight: bold;font-family: Verdana, Geneva, Tahoma, sans-serif;">5:-Biggest among three numbers:</p>
+        <label for="positive_or_not_or_ZERO:">Enter value:</label>
+        <input type="text" id="val1" placeholder="Enter number" >
+        <label for="positive_or_not_or_ZERO:">Enter value:</label>
+        <input type="text" id="val2" placeholder="Enter number" >
+        <label for="positive_or_not_or_ZERO:">Enter value:</label>
+        <input type="text" id="val3" placeholder="Enter number" ><br>
+        <p id="p1" style="margin-left: 15px;"><u>Result Presenting here</u></p>
+        <input type="button" value="TocheckNumber_Even/odd" onclick="Biggestof3()" style="margin-top: 0px; margin-bottom: 10px; cursor: pointer;"><br>
+        <p style="font-weight: bold;font-family: Verdana, Geneva, Tahoma, sans-serif;">6:-To check Prime or not:</p>
+        <label for="prime:">Enter value:</label>
+        <input type="text" id="val4" placeholder="Enter number" ><br>
+        <p id="p2" style="margin-left: 15px;"><u>Result Presenting here</u></p>
+        <input type="button" value="TocheckNumberPrimeOrNot" onclick="primeornot()" style="margin-top: 0px; margin-bottom: 10px; cursor: pointer;"><br>
+        <p style="font-weight: bold;font-family: Verdana, Geneva, Tahoma, sans-serif;">7:-Printing Prime numbers upto given range:</p>
+        <input type="text" id="val5" placeholder="Startingnumber" > 
+         <input type="text" id="val6" placeholder="Ending number" >
+        <p id="p3" style="margin-left: 15px;"><u>Result Presenting here</u></p>
+        <input type="button" value="TocheckNumberPrimeOrNot" onclick="primenumbers()" style="margin-top: 0px; margin-bottom: 10px; cursor: pointer;"><br>
+        <p style="font-weight: bold;font-family: Verdana, Geneva, Tahoma, sans-serif;">8:-Factorial of a Given Number:</p>
+        <label for="Factorial:">Enter value:</label>
+        <input type="text" id="val7" placeholder="Enter number" ><br>
+        <p id="p4" style="margin-left: 15px;"><u>Result Presenting here</u></p>
+        <input type="button" value="FactorialofaNumber" onclick="fact()" style="margin-top: 0px; margin-bottom: 10px; cursor: pointer;"><br>
+        <p style="font-weight: bold;font-family: Verdana, Geneva, Tahoma, sans-serif;">9:-Multiplication Table:</p>
+        <label for="Table:">Enter value:</label>
+        <input type="text" id="val8" placeholder="Enter number" ><br>
+        <p id="p5" style="margin-left: 15px;"><u>Result Presenting here</u></p>
+        <input type="button" value="Multiplication Table" onclick="table()" style="margin-top: 0px; margin-bottom: 10px; cursor: pointer;"><br>
+        <p style="font-weight: bold;font-family: Verdana, Geneva, Tahoma, sans-serif;">11:-Sum of Natural numbers:</p>
+        <label for="Table:">Enter value:</label>
+        <input type="text" id="val9" placeholder="Enter number" ><br>
+        <p id="p6" style="margin-left: 15px;"><u>Result Presenting here</u></p>
+        <input type="button" value="Sumof_NaturalNumbers" onclick="naturalnum()" style="margin-top: 0px; margin-bottom: 10px; cursor: pointer;"><br>
+        <p style="font-weight: bold;font-family: Verdana, Geneva, Tahoma, sans-serif;">12:-Given String is PallindromeOrNOt:</p>
+        <label for="Table:">Enter a String:</label>
+        <input type="text" id="val10" placeholder="Enter String" ><br>
+        <p id="p7" style="margin-left: 15px;"><u>Result Presenting here</u></p>
+        <input type="button" value="PallindromeOrNOt" onclick="StringPal()" style="margin-top: 0px; margin-bottom: 10px; cursor: pointer;"><br>
+        <p style="font-weight: bold;font-family: Verdana, Geneva, Tahoma, sans-serif;">10:-To check Given number is ArmstrongOrNot:</p>
+        <label for="Table:">Enter value:</label>
+        <input type="number" id="val11" placeholder="Enter number" ><br>
+        <p id="p8" style="margin-left: 15px;"><u>Result Presenting here</u></p>
+        <input type="button" value="TocheckArmStOrNOt" onclick="ArmStrongOrNot()" style="margin-top: 0px; margin-bottom: 10px; cursor: pointer;"><br>
+    </body>
+</html>

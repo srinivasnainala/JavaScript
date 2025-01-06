@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Display Details</title>
+    <style>
+        input
+        {
+            background-color: rgb(0, 132, 255);
+            color:white;
+            border-radius: 10px;
+            border-color: rgb(0, 132, 255);
+        }
+        input:hover
+        {
+            background-color: rgb(0, 110, 255);
+            border-radius: 10px;
+            border-color: rgb(0, 110, 255);
+        }
+    </style>
+</head>
+<body>
+    <h2>Your Details:</h2>
+    <p id="n"></p>
+    <p id="l"></p>
+    <p id="f"></p>
+    <p id="m"></p>
+    <p id="e"></p>
+    <p id="m1"></p>
+    <p id="u"></p>
+    <p id="p"></p>
+    <p id="s"></p>
+    <input type="button" onclick="goto()" value="Goto Home_Page">
+    <script>
+        function goto()
+        {
+            window.location.href="/home/miracle/Desktop/html_Practise/Welcome_Page.html";
+        }
+        function displayDetails() 
+        {
+            document.getElementById("n").textContent="Name: "+sessionStorage.getItem("name");
+            document.getElementById("l").textContent="Lastname: "+sessionStorage.getItem("lastname");
+            document.getElementById("f").textContent="Father's Name: "+sessionStorage.getItem("fathername");
+            document.getElementById("m").textContent="Mother's Name: "+sessionStorage.getItem("mothername");
+            document.getElementById("e").textContent="Email: "+sessionStorage.getItem("email");
+            document.getElementById("m1").textContent="Mobile: "+sessionStorage.getItem("mobile");
+            document.getElementById("u").textContent="Username: "+sessionStorage.getItem("username");
+            document.getElementById("p").textContent="Password: "+sessionStorage.getItem("password");
+            document.getElementById("s").textContent="State: "+sessionStorage.getItem("state");
+        }
+        window.onload=displayDetails;
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
