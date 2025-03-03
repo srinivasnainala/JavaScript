@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Calculator</title>
+        <style>
+            .container
+            {
+                text-align: center;
+                margin-top: 100px;
+                background-color: rgb(230, 184, 116);
+                padding-top: 30px; 
+                padding-bottom: 30px; 
+                width: 400px;
+                margin-left: 450px;
+                border-radius: 10% ;
+            }
+            .r1
+            {
+                background-color: rgb(253, 232, 201);
+                color: black;
+                border-radius: 4px;
+                border: none;
+            }
+            .r2
+            {
+                background-color: rgb(253, 232, 201);
+                color: black;
+                border-radius: 4px;
+                border: none;
+            }
+            .r3
+            {
+                background-color: rgb(253, 232, 201);
+                color: black;
+                border-radius: 4px;
+                border: none;
+            }
+            .r4
+            {
+                background-color: rgb(253, 232, 201);
+                color: black;
+                border-radius: 4px;
+                border: none;
+            }
+            .r1:hover{
+                transition: 1000;
+                background-color: rgb(255, 255, 255);
+                color: black;
+            }
+            .r2:hover{
+                transition: 06ms;
+                background-color: rgb(255, 255, 255);
+                color: black;
+            }
+            .r3:hover{
+                transition: 06ms;
+                background-color: rgb(255, 255, 255);
+                color: black;
+            }
+            .r4:hover{
+                transition: 06ms;
+                background-color: rgb(255, 255, 255);
+                color: black;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="res">
+                <input type="text" placeholder="result" style="padding: 10px;width: 250px;margin-left: 0px;">
+            </div>
+            <div style="margin-left: -5px;margin-right: -30px;">
+                <input class="r1" type="button" value="/" style="padding-right: 25px; padding: 20px;margin-top: 20px;margin-left: -30px;margin-right: 20px;">
+                <input class="r1" type="button" value="*" style="padding: 20px;margin-top: 20px;margin-right: 20px;">
+                <input class="r1" type="button" value="- " style="padding: 20px;margin-top: 20px;margin-right: 20px;">
+                <input class="r1" type="button" value="+" style="padding: 20px;margin-top: 20px;   ">
+            </div>
+            <div style="margin-left: -10px;margin-right: -30px;">
+                <input class="r2" type="button" value="7" style="padding: 20px;margin-top: 20px;margin-left: -23px;margin-right: 20px;">
+                <input class="r2" type="button" value="8" style="padding: 20px;margin-top: 20px;margin-right: 20px;">
+                <input class="r2" type="button" value="9" style="padding: 20px;margin-top: 20px;margin-right: 16px;">
+                <input class="r2" type="button" value="%" style="padding: 20px;margin-top: 20px;padding-right: 15px ;padding-left: 20px;   ">
+            </div>
+            <div style="margin-right: -30px;">
+                <input class="r3" type="button" value="4" style="padding: 20px;margin-top: 20px;margin-left: -30px;margin-right: 20px;">
+                <input class="r3" type="button" value="5" style="padding: 20px;margin-top: 20px;margin-right: 20px;">
+                <input class="r3" type="button" value="6" style="padding: 20px;margin-top: 20px;margin-right: 20px;">
+                <input class="r3" type="button" value="." style="padding: 20px;margin-top: 20px;   ">
+            </div>
+            <div style="margin-right: -30px;">
+                <input class="r4" type="button" value="1" style="padding: 20px;margin-top: 20px;margin-left: -30px;margin-right: 20px;">
+                <input class="r4" type="button" value="2" style="padding: 20px;margin-top: 20px;margin-right: 20px;">
+                <input class="r4" type="button" value="3" style="padding: 20px;margin-top: 20px;margin-right: 20px;">
+                <input class="r4" type="button" value="Ac" style="padding: 15px;margin-top: 20px;padding-top: 20px;padding-bottom: 20px;">
+            </div>
+            <div>
+                <input class="r4" type="button" value="Enter" style="padding: 7px;margin-top: 20px;width: 260px;margin-right: 0px;margin-top: 15px;">
+            </div>
+        </div>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+             let resultField = document.querySelector(".res input[type='text']");
+          let buttons = document.querySelectorAll("input[type='button']");
+          let expression = "";
+    
+         buttons.forEach(button => {
+         button.addEventListener("click", function () {
+            let value = this.value;
+            
+            if (value === "Enter") {
+                try {
+                    expression = eval(expression);
+                    resultField.value = expression;
+                } catch (error) {
+                    resultField.value = "Error";
+                }
+            } else if (value === "Ac" || value === "c") {
+                expression = "";
+                resultField.value = "";
+            } else {
+                expression += value;
+                resultField.value = expression;
+            }
+        });
+    });
+});
+
+        </script>
+    </body>
+</html>
